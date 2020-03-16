@@ -1,0 +1,11 @@
+<map id="_glue" name="_glue">
+<area shape="rect" id="node1" title=" " alt="" coords="5,95,59,121"/>
+<area shape="rect" id="node4" href="$struct__reent.html" title=" " alt="" coords="208,213,267,240"/>
+<area shape="rect" id="node2" href="$struct____s_f_i_l_e.html" title=" " alt="" coords="173,347,243,373"/>
+<area shape="rect" id="node3" href="$struct____sbuf.html" title=" " alt="" coords="291,213,352,240"/>
+<area shape="rect" id="node5" href="$struct__atexit.html" title=" " alt="" coords="144,95,205,121"/>
+<area shape="rect" id="node6" href="$struct__on__exit__args.html" title=" " alt="" coords="123,5,226,32"/>
+<area shape="rect" id="node7" href="$struct____tm.html" title=" " alt="" coords="291,95,341,121"/>
+<area shape="rect" id="node8" href="$struct___bigint.html" title=" " alt="" coords="366,95,429,121"/>
+<area shape="rect" id="node9" href="$struct__rand48.html" title=" " alt="" coords="514,95,582,121"/>
+</map>

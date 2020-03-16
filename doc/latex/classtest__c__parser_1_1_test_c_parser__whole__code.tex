@@ -1,0 +1,105 @@
+\hypertarget{classtest__c__parser_1_1_test_c_parser__whole__code}{}\doxysection{test\+\_\+c\+\_\+parser.\+Test\+C\+Parser\+\_\+whole\+\_\+code Class Reference}
+\label{classtest__c__parser_1_1_test_c_parser__whole__code}\index{test\_c\_parser.TestCParser\_whole\_code@{test\_c\_parser.TestCParser\_whole\_code}}
+
+
+Inheritance diagram for test\+\_\+c\+\_\+parser.\+Test\+C\+Parser\+\_\+whole\+\_\+code\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classtest__c__parser_1_1_test_c_parser__whole__code__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for test\+\_\+c\+\_\+parser.\+Test\+C\+Parser\+\_\+whole\+\_\+code\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{classtest__c__parser_1_1_test_c_parser__whole__code__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtest__c__parser_1_1_test_c_parser__whole__code_1_1_constant_visitor}{Constant\+Visitor}}
+\item 
+class \mbox{\hyperlink{classtest__c__parser_1_1_test_c_parser__whole__code_1_1_i_d_name_counter}{I\+D\+Name\+Counter}}
+\item 
+class \mbox{\hyperlink{classtest__c__parser_1_1_test_c_parser__whole__code_1_1_node_klass_counter}{Node\+Klass\+Counter}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classtest__c__parser_1_1_test_c_parser__whole__code_a609e243b701fb99cf5610383947e037f}{assert\+\_\+all\+\_\+\+Constants}} (self, code, constants)
+\item 
+def \mbox{\hyperlink{classtest__c__parser_1_1_test_c_parser__whole__code_ae1f48b013fcfc9ea87ba1ffc81c91254}{assert\+\_\+num\+\_\+\+I\+D\+\_\+refs}} (self, code, name, num)
+\item 
+def \mbox{\hyperlink{classtest__c__parser_1_1_test_c_parser__whole__code_a89bf9a90aa635e6c73c4354c59065ed8}{assert\+\_\+num\+\_\+klass\+\_\+nodes}} (self, code, klass, num)
+\item 
+\mbox{\Hypertarget{classtest__c__parser_1_1_test_c_parser__whole__code_a46b873340579f063a45f71252f685caf}\label{classtest__c__parser_1_1_test_c_parser__whole__code_a46b873340579f063a45f71252f685caf}} 
+def {\bfseries test\+\_\+expressions} (self)
+\item 
+\mbox{\Hypertarget{classtest__c__parser_1_1_test_c_parser__whole__code_a3167e931dfee92b54a7cf3a8b4d56913}\label{classtest__c__parser_1_1_test_c_parser__whole__code_a3167e931dfee92b54a7cf3a8b4d56913}} 
+def {\bfseries test\+\_\+statements} (self)
+\item 
+\mbox{\Hypertarget{classtest__c__parser_1_1_test_c_parser__whole__code_ac034a565dcaaad9eec2fd7ccbc67edad}\label{classtest__c__parser_1_1_test_c_parser__whole__code_ac034a565dcaaad9eec2fd7ccbc67edad}} 
+def {\bfseries test\+\_\+empty\+\_\+statements} (self)
+\item 
+\mbox{\Hypertarget{classtest__c__parser_1_1_test_c_parser__whole__code_a5b21805cb9e92818ec3b4b56eedf7646}\label{classtest__c__parser_1_1_test_c_parser__whole__code_a5b21805cb9e92818ec3b4b56eedf7646}} 
+def {\bfseries test\+\_\+switch\+\_\+statement} (self)
+\item 
+\mbox{\Hypertarget{classtest__c__parser_1_1_test_c_parser__whole__code_ac036c7c78790e453e372609bb7616c3c}\label{classtest__c__parser_1_1_test_c_parser__whole__code_ac036c7c78790e453e372609bb7616c3c}} 
+def {\bfseries test\+\_\+for\+\_\+statement} (self)
+\item 
+\mbox{\Hypertarget{classtest__c__parser_1_1_test_c_parser__whole__code_ac21ea19e340dc73c4998996040d9ae73}\label{classtest__c__parser_1_1_test_c_parser__whole__code_ac21ea19e340dc73c4998996040d9ae73}} 
+def {\bfseries test\+\_\+whole\+\_\+file} (self)
+\item 
+\mbox{\Hypertarget{classtest__c__parser_1_1_test_c_parser__whole__code_a9f78c9de122a4dfcd79089f27f2c6e73}\label{classtest__c__parser_1_1_test_c_parser__whole__code_a9f78c9de122a4dfcd79089f27f2c6e73}} 
+def {\bfseries test\+\_\+whole\+\_\+file\+\_\+with\+\_\+stdio} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Testing of parsing whole chunks of code.
+
+    Since I don't want to rely on the structure of ASTs too
+    much, most of these tests are implemented with visitors.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtest__c__parser_1_1_test_c_parser__whole__code_a609e243b701fb99cf5610383947e037f}\label{classtest__c__parser_1_1_test_c_parser__whole__code_a609e243b701fb99cf5610383947e037f}} 
+\index{test\_c\_parser.TestCParser\_whole\_code@{test\_c\_parser.TestCParser\_whole\_code}!assert\_all\_Constants@{assert\_all\_Constants}}
+\index{assert\_all\_Constants@{assert\_all\_Constants}!test\_c\_parser.TestCParser\_whole\_code@{test\_c\_parser.TestCParser\_whole\_code}}
+\doxysubsubsection{\texorpdfstring{assert\_all\_Constants()}{assert\_all\_Constants()}}
+{\footnotesize\ttfamily def test\+\_\+c\+\_\+parser.\+Test\+C\+Parser\+\_\+whole\+\_\+code.\+assert\+\_\+all\+\_\+\+Constants (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{code,  }\item[{}]{constants }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asserts that the list of all Constant values (by
+    'preorder' appearance) in the chunk of code is as
+    given.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classtest__c__parser_1_1_test_c_parser__whole__code_ae1f48b013fcfc9ea87ba1ffc81c91254}\label{classtest__c__parser_1_1_test_c_parser__whole__code_ae1f48b013fcfc9ea87ba1ffc81c91254}} 
+\index{test\_c\_parser.TestCParser\_whole\_code@{test\_c\_parser.TestCParser\_whole\_code}!assert\_num\_ID\_refs@{assert\_num\_ID\_refs}}
+\index{assert\_num\_ID\_refs@{assert\_num\_ID\_refs}!test\_c\_parser.TestCParser\_whole\_code@{test\_c\_parser.TestCParser\_whole\_code}}
+\doxysubsubsection{\texorpdfstring{assert\_num\_ID\_refs()}{assert\_num\_ID\_refs()}}
+{\footnotesize\ttfamily def test\+\_\+c\+\_\+parser.\+Test\+C\+Parser\+\_\+whole\+\_\+code.\+assert\+\_\+num\+\_\+\+I\+D\+\_\+refs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{code,  }\item[{}]{name,  }\item[{}]{num }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asserts the number of references to the ID with
+    the given name.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classtest__c__parser_1_1_test_c_parser__whole__code_a89bf9a90aa635e6c73c4354c59065ed8}\label{classtest__c__parser_1_1_test_c_parser__whole__code_a89bf9a90aa635e6c73c4354c59065ed8}} 
+\index{test\_c\_parser.TestCParser\_whole\_code@{test\_c\_parser.TestCParser\_whole\_code}!assert\_num\_klass\_nodes@{assert\_num\_klass\_nodes}}
+\index{assert\_num\_klass\_nodes@{assert\_num\_klass\_nodes}!test\_c\_parser.TestCParser\_whole\_code@{test\_c\_parser.TestCParser\_whole\_code}}
+\doxysubsubsection{\texorpdfstring{assert\_num\_klass\_nodes()}{assert\_num\_klass\_nodes()}}
+{\footnotesize\ttfamily def test\+\_\+c\+\_\+parser.\+Test\+C\+Parser\+\_\+whole\+\_\+code.\+assert\+\_\+num\+\_\+klass\+\_\+nodes (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{code,  }\item[{}]{klass,  }\item[{}]{num }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Asserts the amount of klass nodes in the code.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/test\+\_\+c\+\_\+parser.\+py\end{DoxyCompactItemize}

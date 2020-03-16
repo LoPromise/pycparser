@@ -86,6 +86,7 @@ class NodeCfg(object):
         src = self._gen_init()
         src += '\n' + self._gen_children()
         src += '\n' + self._gen_iter()
+        src += '\n' + self._gen_len()
 
         src += '\n' + self._gen_attr_names()
         return src
@@ -161,6 +162,23 @@ class NodeCfg(object):
 
         return src
 
+    def _gen_len(self):
+        src = ''
+
+        if self.all_entries:
+            for seq_child in self.seq_child:
+                src += '    def __len__(self):\n'
+                src += (
+                    '        return len(self.%(child)s)\n') % (dict(child=seq_child))
+
+            if not (self.child or self.seq_child):
+                src += '    def __len__(self):\n'
+                # Empty generator
+                src += (
+                    '        return 0\n')
+
+        return src
+
     def _gen_attr_names(self):
         src = "    attr_names = (" + ''.join("%r, " % nm for nm in self.attr) + ')'
         return src
@@ -199,9 +217,11 @@ def _repr(obj):
         return repr(obj) 
 
 class Node(object):
-    __slots__ = ()
+    __slots__ = ("parent",)
     """ Abstract base class for AST nodes.
     """
+    def __init__(self):
+        self.parent={}  
     def __repr__(self):
         """ Generates a python representation of the current node
         """
@@ -220,7 +240,6 @@ class Node(object):
         result += indent + ')'
         
         return result
-
     def children(self):
         """ A sequence of all children that are Nodes
         """
@@ -316,16 +335,14 @@ class NodeVisitor(object):
     def visit(self, node):
         """ Visit a node.
         """
-
         if self._method_cache is None:
             self._method_cache = {}
-
+        
         visitor = self._method_cache.get(node.__class__.__name__, None)
         if visitor is None:
             method = 'visit_' + node.__class__.__name__
             visitor = getattr(self, method, self.generic_visit)
             self._method_cache[node.__class__.__name__] = visitor
-
         return visitor(node)
 
     def generic_visit(self, node):
@@ -333,6 +350,28 @@ class NodeVisitor(object):
             node. Implements preorder visiting of the node.
         """
         for c in node:
+            c.parent=node
             self.visit(c)
 
+class ReverseTraversalVisitor(object):
+    _method_cache = None
+    def visit(self, node):
+        """ Visit a node backwards.
+        """
+        if self._method_cache is None:
+            self._method_cache = {}
+        if hasattr(node,'parent'):
+            for c in node.parent:
+                if c!=node:
+                    visitor = self._method_cache.get(c.__class__.__name__, None)
+                    if visitor is None:
+                        method = 'visit_' + c.__class__.__name__
+                        visitor = getattr(self, method, self.generic_visit)
+                        self._method_cache[c.__class__.__name__] = visitor
+                    visitor(c)
+            self.visit(node.parent)
+    def generic_visit(self, node):
+        """ Called if no explicit visitor function exists for a
+        node. Implements preorder visiting of the node.
+        """
 '''

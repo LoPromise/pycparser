@@ -1,0 +1,93 @@
+\hypertarget{classpycparser_1_1c__ast_1_1_node_visitor}{}\doxysection{pycparser.\+c\+\_\+ast.\+Node\+Visitor Class Reference}
+\label{classpycparser_1_1c__ast_1_1_node_visitor}\index{pycparser.c\_ast.NodeVisitor@{pycparser.c\_ast.NodeVisitor}}
+
+
+Inheritance diagram for pycparser.\+c\+\_\+ast.\+Node\+Visitor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classpycparser_1_1c__ast_1_1_node_visitor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for pycparser.\+c\+\_\+ast.\+Node\+Visitor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classpycparser_1_1c__ast_1_1_node_visitor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classpycparser_1_1c__ast_1_1_node_visitor_abd29e83402e27691156535222633207a}{visit}} (self, node)
+\item 
+def \mbox{\hyperlink{classpycparser_1_1c__ast_1_1_node_visitor_a48e2dcf4eb89cd60304bf2b6c91452f1}{generic\+\_\+visit}} (self, node)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}A base NodeVisitor class for visiting c_ast nodes.
+    Subclass it and define your own visit_XXX methods, where
+    XXX is the class name you want to visit with these
+    methods.
+
+    For example:
+
+    class ConstantVisitor(NodeVisitor):
+        def __init__(self):
+            self.values = []
+
+        def visit_Constant(self, node):
+            self.values.append(node.value)
+
+    Creates a list of values of all the constant nodes
+    encountered below the given node. To use it:
+
+    cv = ConstantVisitor()
+    cv.visit(node)
+
+    Notes:
+
+    *   generic_visit() will be called for AST nodes for which
+        no visit_XXX method was defined.
+    *   The children of nodes for which a visit_XXX was
+        defined will not be visited - if you need this, call
+        generic_visit() on the node.
+        You can use:
+            NodeVisitor.generic_visit(self, node)
+    *   Modeled after Python's own AST visiting facilities
+        (the ast module of Python 3.0)
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpycparser_1_1c__ast_1_1_node_visitor_a48e2dcf4eb89cd60304bf2b6c91452f1}\label{classpycparser_1_1c__ast_1_1_node_visitor_a48e2dcf4eb89cd60304bf2b6c91452f1}} 
+\index{pycparser.c\_ast.NodeVisitor@{pycparser.c\_ast.NodeVisitor}!generic\_visit@{generic\_visit}}
+\index{generic\_visit@{generic\_visit}!pycparser.c\_ast.NodeVisitor@{pycparser.c\_ast.NodeVisitor}}
+\doxysubsubsection{\texorpdfstring{generic\_visit()}{generic\_visit()}}
+{\footnotesize\ttfamily def pycparser.\+c\+\_\+ast.\+Node\+Visitor.\+generic\+\_\+visit (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Called if no explicit visitor function exists for a
+    node. Implements preorder visiting of the node.
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{classtest__c__parser_1_1_test_c_parser__whole__code_1_1_node_klass_counter_aa72e78306aeed1c7f12b9ece0db3a12c}{test\+\_\+c\+\_\+parser.\+Test\+C\+Parser\+\_\+whole\+\_\+code.\+Node\+Klass\+Counter}}.
+
+\mbox{\Hypertarget{classpycparser_1_1c__ast_1_1_node_visitor_abd29e83402e27691156535222633207a}\label{classpycparser_1_1c__ast_1_1_node_visitor_abd29e83402e27691156535222633207a}} 
+\index{pycparser.c\_ast.NodeVisitor@{pycparser.c\_ast.NodeVisitor}!visit@{visit}}
+\index{visit@{visit}!pycparser.c\_ast.NodeVisitor@{pycparser.c\_ast.NodeVisitor}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}}
+{\footnotesize\ttfamily def pycparser.\+c\+\_\+ast.\+Node\+Visitor.\+visit (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Visit a node.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+pycparser/c\+\_\+ast.\+py\end{DoxyCompactItemize}
