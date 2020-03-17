@@ -86,7 +86,7 @@ class NodeCfg(object):
         src = self._gen_init()
         src += '\n' + self._gen_children()
         src += '\n' + self._gen_iter()
-        src += '\n' + self._gen_len()
+        #src += '\n' + self._gen_len()
 
         src += '\n' + self._gen_attr_names()
         return src
@@ -169,7 +169,7 @@ class NodeCfg(object):
             for seq_child in self.seq_child:
                 src += '    def __len__(self):\n'
                 src += (
-                    '        return len(self.%(child)s)\n') % (dict(child=seq_child))
+                    '        if self.%(child)s is not None:\n            return len(self.%(child)s)\n') % (dict(child=seq_child))
 
             if not (self.child or self.seq_child):
                 src += '    def __len__(self):\n'

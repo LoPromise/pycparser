@@ -312,7 +312,8 @@ class Case(Node):
             yield child
 
     def __len__(self):
-        return len(self.stmts)
+        if self.stmts is not None:
+            return len(self.stmts)
 
     attr_names = ()
 
@@ -355,7 +356,8 @@ class Compound(Node):
             yield child
 
     def __len__(self):
-        return len(self.block_items)
+        if self.block_items is not None:
+            return len(self.block_items)
 
     attr_names = ()
 
@@ -463,7 +465,8 @@ class DeclList(Node):
             yield child
 
     def __len__(self):
-        return len(self.decls)
+        if self.decls is not None:
+            return len(self.decls)
 
     attr_names = ()
 
@@ -484,7 +487,8 @@ class Default(Node):
             yield child
 
     def __len__(self):
-        return len(self.stmts)
+        if self.stmts is not None:
+            return len(self.stmts)
 
     attr_names = ()
 
@@ -595,7 +599,8 @@ class EnumeratorList(Node):
             yield child
 
     def __len__(self):
-        return len(self.enumerators)
+        if self.enumerators is not None:
+            return len(self.enumerators)
 
     attr_names = ()
 
@@ -616,7 +621,8 @@ class ExprList(Node):
             yield child
 
     def __len__(self):
-        return len(self.exprs)
+        if self.exprs is not None:
+            return len(self.exprs)
 
     attr_names = ()
 
@@ -637,7 +643,8 @@ class FileAST(Node):
             yield child
 
     def __len__(self):
-        return len(self.ext)
+        if self.ext is not None:
+            return len(self.ext)
 
     attr_names = ()
 
@@ -740,7 +747,8 @@ class FuncDef(Node):
             yield child
 
     def __len__(self):
-        return len(self.param_decls)
+        if self.param_decls is not None:
+            return len(self.param_decls)
 
     attr_names = ()
 
@@ -844,7 +852,8 @@ class InitList(Node):
             yield child
 
     def __len__(self):
-        return len(self.exprs)
+        if self.exprs is not None:
+            return len(self.exprs)
 
     attr_names = ()
 
@@ -888,7 +897,8 @@ class NamedInitializer(Node):
             yield child
 
     def __len__(self):
-        return len(self.name)
+        if self.name is not None:
+            return len(self.name)
 
     attr_names = ()
 
@@ -909,7 +919,8 @@ class ParamList(Node):
             yield child
 
     def __len__(self):
-        return len(self.params)
+        if self.params is not None:
+            return len(self.params)
 
     attr_names = ()
 
@@ -968,7 +979,8 @@ class Struct(Node):
             yield child
 
     def __len__(self):
-        return len(self.decls)
+        if self.decls is not None:
+            return len(self.decls)
 
     attr_names = ('name', )
 
@@ -1141,7 +1153,8 @@ class Union(Node):
             yield child
 
     def __len__(self):
-        return len(self.decls)
+        if self.decls is not None:
+            return len(self.decls)
 
     attr_names = ('name', )
 
